@@ -23,6 +23,22 @@ class Hangman
         puts word_teaser
     end
 
+    def make_guess
+        puts "Enter a letter"
+        guess = gets.chomp
+
+        # when user guess that word, make sure if part of the word
+        great_guess = @word.first.include? guess
+
+        if great_guess
+            puts "Great guess!"
+        else
+            puts "Sorryyyyyy.. try again"
+        end
+
+    end
+
+
     def begin
         # where we ask the user/ player for a letter
         puts "Start new game... your clue is #{ @word.first.size } characters long"
@@ -30,8 +46,8 @@ class Hangman
         
 
         puts "your clue is #{@word.last}"
-        puts "Enter a"
-        guess = gets.chomp
+
+        make_guess
 
     end
 
